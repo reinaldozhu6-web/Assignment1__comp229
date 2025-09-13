@@ -1,33 +1,15 @@
-/* 确保根元素和body占据全高全宽 */
-html,
-body {
-    height: 100%;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
-    /* 防止水平滚动 */
-}
-
-/* 主应用容器 - 使用全宽 */
-.app-container {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-}
-
-/* 导航栏全宽 */
+/* 导航栏样式 */
 .navbar {
-    background: #2c3e50;
+    background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
     padding: 1rem 0;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    width: 100%;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
 .nav-container {
     max-width: 1200px;
-    /* 保持内容区域的最大宽度，但导航背景全宽 */
     margin: 0 auto;
     padding: 0 2rem;
     display: flex;
@@ -35,43 +17,98 @@ body {
     align-items: center;
 }
 
-/* 主内容区域 - 使用全宽 */
+.nav-logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+.nav-logo span:first-child {
+    background: white;
+    color: #3498db;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: white;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 80%;
+}
+
+/* 主内容区域 */
 .main-content {
     flex: 1;
     width: 100%;
-    padding: 2rem 0;
-    /* 上下有间距，左右无间距 */
 }
 
-/* 页脚全宽 */
+/* 页脚样式 */
 .footer {
     background: #2c3e50;
     color: white;
     text-align: center;
-    padding: 1rem;
+    padding: 2rem 0;
     margin-top: auto;
-    width: 100%;
 }
 
-/* 页面容器 - 使用全宽但内容居中 */
-.page-container {
-    width: 100%;
-    max-width: 1200px;
-    /* 内容区域最大宽度 */
-    margin: 0 auto;
-    /* 居中 */
-    padding: 0 2rem;
-    /* 左右内边距 */
+.footer .container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
 }
 
-/* 全宽部分（如果需要某些部分全宽） */
-.full-width {
-    width: 100vw;
-    position: relative;
-    left: 50%;
-    right: 50%;
-    margin-left: -50vw;
-    margin-right: -50vw;
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.social-links a {
+    color: #3498db;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.social-links a:hover {
+    color: white;
 }
 
 /* 响应式设计 */
@@ -82,12 +119,11 @@ body {
     }
 
     .nav-menu {
-        flex-direction: column;
-        gap: 0.5rem;
-        align-items: center;
+        flex-wrap: wrap;
+        justify-content: center;
     }
 
-    .page-container {
-        padding: 0 1rem;
+    .nav-link {
+        padding: 0.5rem;
     }
 }
