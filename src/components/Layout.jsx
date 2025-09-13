@@ -1,16 +1,16 @@
-// components/Layout.jsx
 import { Link } from 'react-router-dom';
-import logo from '../assets/logo.png'; // 导入你的Logo图片
+// 注释掉logo导入
+// import logo from '../assets/logo.png';
 
 const Layout = ({ children }) => {
     return (
         <>
             <nav>
                 <Link to="/">
-                    <img src={logo} alt="My Logo" height="50" /> {/* 你的自定义Logo */}
+                    {/* 暂时移除logo或使用文字logo */}
+                    <span style={{ fontSize: '24px', fontWeight: 'bold' }}>MyPortfolio</span>
                 </Link>
                 <div>
-                    {/* Link 组件用于导航，不会刷新页面 */}
                     <Link to="/">Home</Link>
                     <Link to="/about">About Me</Link>
                     <Link to="/projects">Projects</Link>
@@ -18,11 +18,10 @@ const Layout = ({ children }) => {
                     <Link to="/contact">Contact</Link>
                 </div>
             </nav>
-            <main>
-                {/* 这里会渲染当前活动的页面（Home, About, etc.） */}
-                {children}
-            </main>
-            <footer>{/* 你的页脚内容 */}</footer>
+            <main>{children}</main>
+            <footer>
+                <p>&copy; 2025 My Portfolio</p>
+            </footer>
         </>
     );
 };
