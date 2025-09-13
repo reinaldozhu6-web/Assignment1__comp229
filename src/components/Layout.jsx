@@ -1,28 +1,33 @@
 import { Link } from 'react-router-dom';
-// 注释掉logo导入
-// import logo from '../assets/logo.png';
+import './Layout.css';
 
 const Layout = ({ children }) => {
     return (
-        <>
-            <nav>
-                <Link to="/">
-                    {/* 暂时移除logo或使用文字logo */}
-                    <span style={{ fontSize: '24px', fontWeight: 'bold' }}>MyPortfolio</span>
-                </Link>
-                <div>
-                    <Link to="/">Home</Link>
-                    <Link to="/about">About Me</Link>
-                    <Link to="/projects">Projects</Link>
-                    <Link to="/services">Services</Link>
-                    <Link to="/contact">Contact</Link>
+        <div className="app-container">
+            <nav className="navbar">
+                <div className="nav-container">
+                    <Link to="/" className="nav-logo">
+                        {/* 文字Logo - 你可以后期替换为图片 */}
+                        <span>MyPortfolio</span>
+                    </Link>
+                    <div className="nav-menu">
+                        <Link to="/" className="nav-link">Home</Link>
+                        <Link to="/about" className="nav-link">About</Link>
+                        <Link to="/projects" className="nav-link">Projects</Link>
+                        <Link to="/services" className="nav-link">Services</Link>
+                        <Link to="/contact" className="nav-link">Contact</Link>
+                    </div>
                 </div>
             </nav>
-            <main>{children}</main>
-            <footer>
-                <p>&copy; 2025 My Portfolio</p>
+
+            <main className="main-content">
+                {children}
+            </main>
+
+            <footer className="footer">
+                <p>&copy; 2025 My Portfolio. All rights reserved.</p>
             </footer>
-        </>
+        </div>
     );
 };
 

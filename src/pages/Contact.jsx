@@ -1,17 +1,12 @@
-// pages/Contact.jsx
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 
 const Contact = () => {
-    // 使用 React 的 useState Hook 来管理表单数据
     const [formData, setFormData] = useState({
         firstName: '',
         lastName: '',
-        contactNumber: '',
         email: '',
         message: ''
     });
-    const navigate = useNavigate();
 
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -19,28 +14,84 @@ const Contact = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        // 1. 在这里，你可以打印数据到控制台来验证
         console.log('Form submitted:', formData);
-        // 2. 后续可以在这里添加发送邮件的逻辑（比如用EmailJS或Node.js后端）
-        // 3. 重置表单
-        setFormData({ firstName: '', lastName: '', contactNumber: '', email: '', message: '' });
-        // 4. 跳转回首页（满足作业要求）
-        alert('Message Received! Redirecting to Home...');
-        navigate('/');
+        alert('Thank you for your message! I will get back to you soon.');
+        setFormData({ firstName: '', lastName: '', email: '', message: '' });
     };
 
     return (
-        <div>
-            <h1>Contact Me</h1>
-            <p>Your contact info here...</p>
-            <form onSubmit={handleSubmit}>
-                <input type="text" name="firstName" placeholder="First Name" value={formData.firstName} onChange={handleChange} required />
-                <input type="text" name="lastName" placeholder="Last Name" value={formData.lastName} onChange={handleChange} required />
-                <input type="tel" name="contactNumber" placeholder="Contact Number" value={formData.contactNumber} onChange={handleChange} />
-                <input type="email" name="email" placeholder="Email Address" value={formData.email} onChange={handleChange} required />
-                <textarea name="message" placeholder="Your Message" value={formData.message} onChange={handleChange} required></textarea>
-                <button type="submit">Send Message</button>
-            </form>
+        <div className="page-container">
+            <h1 className="page-title">Contact Me</h1>
+            <div style={{ maxWidth: '600px', margin: '0 auto' }}>
+                <div style={{ marginBottom: '2rem', textAlign: 'center' }}>
+                    <p>Email: your.email@example.com</p>
+                    <p>Phone: +1 (234) 567-8900</p>
+                </div>
+
+                <form onSubmit={handleSubmit} style={{ background: '#f8f9fa', padding: '2rem', borderRadius: '8px' }}>
+                    <div style={{ display: 'grid', gap: '1rem', gridTemplateColumns: '1fr 1fr' }}>
+                        <div>
+                            <label>First Name</label>
+                            <input
+                                type="text"
+                                name="firstName"
+                                value={formData.firstName}
+                                onChange={handleChange}
+                                required
+                                style={{ width: '100%', padding: '0.8rem', border: '1px solid #ddd', borderRadius: '4px' }}
+                            />
+                        </div>
+                        <div>
+                            <label>Last Name</label>
+                            <input
+                                type="text"
+                                name="lastName"
+                                value={formData.lastName}
+                                onChange={handleChange}
+                                required
+                                style={{ width: '100%', padding: '0.8rem', border: '1px solid #ddd', borderRadius: '4px' }}
+                            />
+                        </div>
+                    </div>
+
+                    <div style={{ marginTop: '1rem' }}>
+                        <label>Email</label>
+                        <input
+                            type="email"
+                            name="email"
+                            value={formData.email}
+                            onChange={handleChange}
+                            required
+                            style={{ width: '100%', padding: '0.8rem', border: '1px solid #ddd', borderRadius: '4px' }}
+                        />
+                    </div>
+
+                    <div style={{ marginTop: '1rem' }}>
+                        <label>Message</label>
+                        <textarea
+                            name="message"
+                            value={formData.message}
+                            onChange={handleChange}
+                            required
+                            rows="5"
+                            style={{ width: '100%', padding: '0.8rem', border: '1px solid #ddd', borderRadius: '4px' }}
+                        />
+                    </div>
+
+                    <button type="submit" style={{
+                        marginTop: '1.5rem',
+                        padding: '1rem 2rem',
+                        background: '#27ae60',
+                        color: 'white',
+                        border: 'none',
+                        borderRadius: '5px',
+                        cursor: 'pointer',
+                        width: '100%'
+                    }}>
+                        Send Message
+                    </button>
+                </form>
+            </div>
         </div>
     );
 };
