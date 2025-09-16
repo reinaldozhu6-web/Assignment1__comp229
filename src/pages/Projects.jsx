@@ -1,3 +1,8 @@
+import project1 from '../assets/project1.png';
+import project2 from '../assets/project2.png';
+import project3 from '../assets/project3.png';
+import project4 from '../assets/project4.png';
+
 const Projects = () => {
     const projects = [
         {
@@ -5,7 +10,7 @@ const Projects = () => {
             title: "E-Commerce Platform",
             description: "A full-stack e-commerce solution with product management, user authentication, and payment processing.",
             technologies: ["React", "Node.js", "MongoDB", "Stripe API"],
-            image: "🛒",
+            image: project1,
             link: "#"
         },
         {
@@ -13,7 +18,7 @@ const Projects = () => {
             title: "Task Management App",
             description: "A productivity application for managing tasks and projects with team collaboration features.",
             technologies: ["React Native", "Firebase", "Redux"],
-            image: "✅",
+            image: project2,
             link: "#"
         },
         {
@@ -21,7 +26,7 @@ const Projects = () => {
             title: "Weather Dashboard",
             description: "A responsive weather application that displays current and forecasted weather conditions.",
             technologies: ["JavaScript", "Weather API", "CSS3"],
-            image: "🌤️",
+            image: project3,
             link: "#"
         },
         {
@@ -29,7 +34,7 @@ const Projects = () => {
             title: "Restaurant Booking System",
             description: "An online reservation system for restaurants with admin dashboard and customer notifications.",
             technologies: ["Vue.js", "Express.js", "MySQL"],
-            image: "🍽️",
+            image: project4,
             link: "#"
         }
     ];

@@ -1,3 +1,5 @@
+import profilePhoto from '../assets/profile.jpg';
+
 const About = () => {
     return (
         <div className="page-container fade-in">
@@ -6,9 +8,11 @@ const About = () => {
 
                 <div className="about-content">
                     <div className="about-image">
-                        <div className="profile-image-placeholder">
-                            <span>RP</span>
-                        </div>
+                        <img
+                            src={profilePhoto}
+                            alt="Reinaldo Pang"
+                            className="profile-photo"
+                        />
                     </div>
 
                     <div className="about-text">
