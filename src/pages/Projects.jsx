@@ -49,7 +49,12 @@ const Projects = () => {
                     {projects.map(project => (
                         <div key={project.id} className="project-card">
                             <div className="project-image">
-                                <div className="project-icon">{project.image}</div>
+                                {/* 使用img标签显示PNG图片 */}
+                                <img
+                                    src={project.image}
+                                    alt={project.title}
+                                    className="project-photo"
+                                />
                             </div>
                             <div className="project-content">
                                 <h3>{project.title}</h3>
