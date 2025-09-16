@@ -18,13 +18,13 @@ const Contact = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        // 这里可以添加表单提交逻辑
+        // here you would typically handle form submission, e.g., send data to a server
         console.log('Form submitted:', formData);
 
-        // 显示成功消息
+        // Display a thank you message (for demonstration purposes)
         alert('Thank you for your message! I will get back to you soon.');
 
-        // 重置表单
+        // reset form data
         setFormData({
             firstName: '',
             lastName: '',
@@ -33,7 +33,7 @@ const Contact = () => {
             message: ''
         });
 
-        // 重定向到首页（根据作业要求）
+        // Optionally navigate to another page, e.g., home
         navigate('/');
     };
 
