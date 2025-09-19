@@ -30,7 +30,7 @@ const Layout = ({ children }) => {
                 <div className="container">
                     <p>&copy; 2025 Reinaldo Pang. All rights reserved.</p>
                     <div className="social-links">
-                        <a href="https://github.com" aria-label="GitHub">GitHub</a>
+                        <a href="https://github.com/reinaldozhu6-web/Assignment1__comp229" aria-label="GitHub">GitHub</a>
                         <a href="https://linkedin.com" aria-label="LinkedIn">LinkedIn</a>
                         <a href="https://twitter.com" aria-label="Twitter">Twitter</a>
                     </div>
